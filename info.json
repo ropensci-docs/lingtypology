@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "addf7a33f8c8f734c78077be80654462976e3ba0",
+    "author": "George Moroz <agricolamz@gmail.com>",
+    "time": "2024-03-13 09:18:13",
+    "files": 59,
+    "merge": false,
+    "message": "update Glottolog to v. 5.0\n"
+  },
+  "repo": "https://github.com/ropensci/lingtypology",
+  "pkg": "lingtypology"
+}

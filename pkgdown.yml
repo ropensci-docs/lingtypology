@@ -1,0 +1,14 @@
+pandoc: 2.16.2
+pkgdown: 2.0.7
+pkgdown_sha: ~
+articles:
+  lingtypology_creating_maps: lingtypology_creating_maps.html
+  lingtypology_db_API: lingtypology_db_API.html
+  lingtypology_dplyr: lingtypology_dplyr.html
+  lingtypology_glottolog_functions: lingtypology_glottolog_functions.html
+  lingtypology_intro: lingtypology_intro.html
+last_built: 2024-03-13T09:22Z
+urls:
+  reference: https://docs.ropensci.org/lingtypology/reference
+  article: https://docs.ropensci.org/lingtypology/articles
+
