@@ -1,0 +1,162 @@
+# \`lingtypology\`: Download typological databases' data
+
+`lingtypology` provides an ability to download data from these
+typological databases
+
+- [World Atlas of Language Structures](https://wals.info/)
+- [Grambank](https://grambank.clld.org)
+- [AUTOTYP](https://github.com/autotyp/autotyp-data#the-autotyp-database)
+- [PHOIBLE](https://phoible.org/)
+- [Affix Borrowing database](https://afbo.info)
+- [South American Indigenous Language
+  Structures](https://sails.clld.org/)
+- [Austronesian Basic Vocabulary
+  Database](https://abvd.eva.mpg.de/austronesian/)
+
+All database function names have identical structure:
+**database_name.feature**. All functions have as first argument
+`feature`. All functions create dataframe with column `language` that
+can be used in
+[`map.feature()`](https://docs.ropensci.org/lingtypology/reference/map.feature.md)
+function. It should be noted that all functions cut out the data that
+can’t be maped, so if you want to prevent functions from this behavior
+set argument `na.rm` to `FALSE`.
+
+### 1. WALS
+
+The names of the WALS features can be typed in a lower case. This
+function preserves coordinates from WALS, so you can map coordinates
+from the WALS or use coordinates from `lingtypology`.
+
+``` r
+
+df <- wals.feature(c("1a", "20a"))
+head(df)
+map.feature(df$language,
+            features = df$`1a`,
+            latitude = df$latitude,
+            longitude = df$longitude,
+            label = df$language,
+            title = "Consonant Inventories")
+```
+
+### 2. Grambank
+
+The names of the Grambank features can be typed in a lower case. This
+function preserves coordinates from Grambank, so you can map coordinates
+from the WALS or use coordinates from `lingtypology`.
+
+``` r
+
+df <- grambank.feature(c("gb026", "gb042"))
+head(df)
+map.feature(df$grambank.name,
+            features = df$`GB042`,
+            latitude = df$latitude,
+            longitude = df$longitude,
+            label = df$language,
+            title = "Is there productive overt morphological singular marking on nouns?")
+```
+
+### 3. AUTOTYP
+
+The AUTOTYP features are listed on [the GitHub
+page](https://github.com/autotyp/autotyp-data/blob/master/datasets.md).
+You can use more human way with spaces. You can also use a module names
+in order to download all variables in a module (e. g. `Gender`):
+
+``` r
+
+df <- autotyp.feature(c('Has Gender', 'Has Numeral Classifiers'))
+head(df)
+map.feature(df$language,
+            features = df$HasNumeralClassifiers,
+            label = df$language_for_lingtypology,
+            title = "Presence of Numeral Classifiers")
+```
+
+### 4. PHOIBLE
+
+I used only four features from PHOIBLE: the number of phonemes, the
+number of consonants, the number of tones and the number of vowels. If
+you need only a set of them, just specify it in the `features` argument.
+Since there is a lot of doubling information in the PHOIBLE database,
+there is an argument `source`.
+
+``` r
+
+df <- phoible.feature(source = "UPSID")
+head(df)
+```
+
+### 5. AfBo
+
+The AfBo database has a lot of features that distinguish affix
+functions, but again you can use a bare function without any arguments
+to download the whole database. There will be no difference in time,
+since this function downloads the whole database to your PC. The main
+destinction is that this database provides recipient and donor
+languages, so other column names should be used.
+
+``` r
+
+df <- afbo.feature(c("adjectivizer", "adverbializer"))
+head(df)
+map.feature(df$Recipient.name,
+            features = df$adjectivizer,
+            label = df$Recipient.name,
+            title = "Borrowed adjectivizer affixes")
+```
+
+### 6. SAILS
+
+The SAILS database provide a lot of
+[features](https://sails.clld.org/parameters), so the function work with
+their ids:
+
+``` r
+
+df <- sails.feature(features = "ics10")
+head(df)
+map.feature(df$language,
+            features = df$ics10_description,
+            longitude = df$longitude,
+            latitude = df$latitude,
+            label = df$language,
+            title = "Are there numeral classifiers?")
+```
+
+### 7. ABVD
+
+The ABVD database is a lexical database, so it is different from clld
+databases. First of all, ABVD has its own language classification ids.
+The information about the same language from different sources can be
+received from these database different ids. So I select several
+languages and map them coloring by word with the meaning ‘hand’.
+
+``` r
+
+df <- abvd.feature(c(292, 7))
+head(df)
+new_df <- df[df$word == "hand",]
+map.feature(new_df$language,
+            features = new_df$item,
+            label = new_df$language)
+```
+
+### 8. UraLex
+
+`uralex.feature` downloads data from UraLex basic vocabulary dataset.
+Original language names are stored in the `uralex.name` variable.
+Converted language names for `map.feature` are stored in the `language`
+variable.
+
+``` r
+
+df <- uralex.feature()
+df <- df[df$uralex_mng == "crush",]
+
+map.feature(df$language,
+            label = df$item,
+            title = "crush")
+```

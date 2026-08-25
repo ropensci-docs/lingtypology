@@ -1,0 +1,202 @@
+# lingtypology
+
+[![Project Status: Active - The project has reached a stable, usable
+state and is being actively
+developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![R build
+status](https://github.com/ropensci/lingtypology/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/lingtypology/actions)
+
+[![CRAN
+version](https://www.r-pkg.org/badges/version/lingtypology)](https://cran.r-project.org/package=lingtypology)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/lingtypology)](https://CRAN.R-project.org/package=lingtypology)
+[![](https://badges.ropensci.org/95_status.svg)](https://github.com/ropensci/onboarding/issues/95)
+[![Research software
+impact](http://depsy.org/api/package/cran/lingtypology/badge.svg)](http://depsy.org/package/r/lingtypology)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.815028.svg)](https://doi.org/10.5281/zenodo.815028)
+
+`lingtypology` package connects R with the [Glottolog database (v.
+5.3)](https://glottolog.org/) and provides additional functionality for
+linguistic mapping. The Glottolog database contains the catalogue of the
+world’s languages. This package helps researchers to make linguistic
+maps, using philosophy of [the Cross-Linguistic Linked Data
+project](https://clld.org/), which uniform access to the data across
+publications. This package is based on [`leaflet`
+package](https://rstudio.github.io/leaflet/), so `lingtypology` package
+is a package for linguistic interactive mapping. You also might be
+interested in looking into some alternatives to lingtypology:
+
+- [lingtypology](https://pypi.org/project/lingtypology/) in Python by
+  Michael Voronov;
+- [glottospace](https://github.com/glottospace/glottospace) – R package
+  for the geospatial analysis based on Glottolog by Sietze Norder et al;
+- [`lingtypr`](https://gitlab.com/laurabecker/lingtypr) – R package
+  which partially intersects with `lingtypology` functionality by Laura
+  Becker;
+- [`glottoTrees`](https://github.com/erichround/glottoTrees) – R package
+  for visualising and modifing glottolog trees by Erich Round
+
+## Installation
+
+Get the stable version from CRAN:
+
+``` r
+
+install.packages("lingtypology")
+```
+
+… or get the development version from GitHub:
+
+``` r
+
+install.packages("remotes")
+remotes::install_github("ropensci/lingtypology")
+```
+
+Sometimes installation failed because of the absence of the package
+`crosstalk`. Just install it using command
+`install.packages("crosstalk")`.
+
+Load a library:
+
+``` r
+
+library(lingtypology)
+```
+
+For a detailed tutorial see [GitHub
+pages](https://ropensci.github.io/lingtypology/).
+
+You can contribute to `lingtypology`, but look through [contribution
+info](https://github.com/ropensci/lingtypology/blob/master/CONTRIBUTING.md)
+before.
+
+------------------------------------------------------------------------
+
+# Package index
+
+## All functions
+
+- [`abvd`](https://docs.ropensci.org/lingtypology/reference/abvd.md) :
+  ABVD's Language identifiers
+- [`abvd.feature()`](https://docs.ropensci.org/lingtypology/reference/abvd.feature.md)
+  : Download ABVD data
+- [`afbo.feature()`](https://docs.ropensci.org/lingtypology/reference/afbo.feature.md)
+  : Download AfBo data
+- [`aff.lang()`](https://docs.ropensci.org/lingtypology/reference/aff.lang.md)
+  : Get affiliation by language
+- [`area.lang()`](https://docs.ropensci.org/lingtypology/reference/area.lang.md)
+  : Get macro area by language
+- [`atlas.database()`](https://docs.ropensci.org/lingtypology/reference/atlas.database.md)
+  : Create an atlas
+- [`autotyp`](https://docs.ropensci.org/lingtypology/reference/autotyp.md)
+  : AUTOTYP's Language identifiers
+- [`autotyp.feature()`](https://docs.ropensci.org/lingtypology/reference/autotyp.feature.md)
+  : Download AUTOTYP data
+- [`bantu`](https://docs.ropensci.org/lingtypology/reference/bantu.md) :
+  BANTU's Language identifiers
+- [`bantu.feature()`](https://docs.ropensci.org/lingtypology/reference/bantu.feature.md)
+  : Download BANTU data
+- [`bivaltyp.feature()`](https://docs.ropensci.org/lingtypology/reference/bivaltyp.feature.md)
+  : Download BivalTyp data
+- [`circassian`](https://docs.ropensci.org/lingtypology/reference/circassian.md)
+  : Circassian villages in Russia
+- [`countries`](https://docs.ropensci.org/lingtypology/reference/countries.md)
+  : Catalogue of countries
+- [`country.lang()`](https://docs.ropensci.org/lingtypology/reference/country.lang.md)
+  : Get country by language
+- [`eurasianphonology`](https://docs.ropensci.org/lingtypology/reference/eurasianphonology.md)
+  : Eurasianphonology data
+- [`eurasianphonology.feature()`](https://docs.ropensci.org/lingtypology/reference/eurasianphonology.feature.md)
+  : Opens data from the database of Eurasian phonological inventories
+- [`frequency_list.feature()`](https://docs.ropensci.org/lingtypology/reference/frequency_list.feature.md)
+  : Download frequency list
+- [`glottolog`](https://docs.ropensci.org/lingtypology/reference/glottolog.md)
+  : Catalogue of languages of the world
+- [`gltc.iso()`](https://docs.ropensci.org/lingtypology/reference/gltc.iso.md)
+  : Get Glottocode by ISO 639–3 code
+- [`gltc.lang()`](https://docs.ropensci.org/lingtypology/reference/gltc.lang.md)
+  : Get Glottocode by language
+- [`grambank.feature()`](https://docs.ropensci.org/lingtypology/reference/grambank.feature.md)
+  : Download Grambank data
+- [`%>%`](https://docs.ropensci.org/lingtypology/reference/imports.md) :
+  Objects imported from other packages
+- [`is.glottolog()`](https://docs.ropensci.org/lingtypology/reference/is.glottolog.md)
+  : Are these languages in glottolog?
+- [`iso.gltc()`](https://docs.ropensci.org/lingtypology/reference/iso.gltc.md)
+  : Get ISO 639–3 code by Glottocode
+- [`iso.lang()`](https://docs.ropensci.org/lingtypology/reference/iso.lang.md)
+  : Get ISO 639–3 code by language
+- [`iso3.iso1()`](https://docs.ropensci.org/lingtypology/reference/iso3.iso1.md)
+  : Get ISO 639-3 code from ISO 639-1
+- [`iso_639`](https://docs.ropensci.org/lingtypology/reference/iso_639.md)
+  : ISO 639-3 is a set of codes that defines three-letter identifiers
+  for all known human languages.
+- [`lang.aff()`](https://docs.ropensci.org/lingtypology/reference/lang.aff.md)
+  : Get languages by affiliation
+- [`lang.country()`](https://docs.ropensci.org/lingtypology/reference/lang.country.md)
+  : Get language by country
+- [`lang.gltc()`](https://docs.ropensci.org/lingtypology/reference/lang.gltc.md)
+  : Get language by Glottocode
+- [`lang.iso()`](https://docs.ropensci.org/lingtypology/reference/lang.iso.md)
+  : Get language by ISO 639–3 code
+- [`lat.lang()`](https://docs.ropensci.org/lingtypology/reference/lat.lang.md)
+  : Get latitude by language
+- [`level.lang()`](https://docs.ropensci.org/lingtypology/reference/level.lang.md)
+  : Get a level of language by language
+- [`long.lang()`](https://docs.ropensci.org/lingtypology/reference/long.lang.md)
+  : Get longitude by language
+- [`map.feature()`](https://docs.ropensci.org/lingtypology/reference/map.feature.md)
+  : Create a map
+- [`oto_mangueanIC`](https://docs.ropensci.org/lingtypology/reference/oto_mangueanIC.md)
+  : Oto-Manguean Inflectional Class Database Language identifiers
+- [`oto_mangueanIC.feature()`](https://docs.ropensci.org/lingtypology/reference/oto_mangueanIC.feature.md)
+  : Download Oto-Manguean Inflectional Class Database data
+- [`phoible`](https://docs.ropensci.org/lingtypology/reference/phoible.md)
+  : Phoible glottolog - language correspondencies
+- [`phoible.feature()`](https://docs.ropensci.org/lingtypology/reference/phoible.feature.md)
+  : Download PHOIBLE data
+- [`phonological_profiles`](https://docs.ropensci.org/lingtypology/reference/phonological_profiles.md)
+  : Number of consonants and presence of ejectives
+- [`polygon.points_fd()`](https://docs.ropensci.org/lingtypology/reference/polygon.points_fd.md)
+  : Get polygons from fixed distance circles around coordinates
+- [`polygon.points_kde()`](https://docs.ropensci.org/lingtypology/reference/polygon.points_kde.md)
+  : Get kernel density estimation poligon from coordinates
+- [`providers`](https://docs.ropensci.org/lingtypology/reference/providers.md)
+  : Providers
+- [`sails.feature()`](https://docs.ropensci.org/lingtypology/reference/sails.feature.md)
+  : Download SAILS data
+- [`soundcomparisons`](https://docs.ropensci.org/lingtypology/reference/soundcomparisons.md)
+  : SOUNDCOMPARISONS's Language identifiers
+- [`soundcomparisons.feature()`](https://docs.ropensci.org/lingtypology/reference/soundcomparisons.feature.md)
+  : Download SOUNDCOMPARISONS data
+- [`subc.lang()`](https://docs.ropensci.org/lingtypology/reference/subc.lang.md)
+  : Get subclassification by language
+- [`uralex`](https://docs.ropensci.org/lingtypology/reference/uralex.md)
+  : UraLex's Language identifiers
+- [`uralex.feature()`](https://docs.ropensci.org/lingtypology/reference/uralex.feature.md)
+  : Download UraLex data
+- [`url.lang()`](https://docs.ropensci.org/lingtypology/reference/url.lang.md)
+  : Make a url-link to glottolog page for a language
+- [`valpal.feature()`](https://docs.ropensci.org/lingtypology/reference/valpal.feature.md)
+  : Download ValPaL data
+- [`vanuatu.feature()`](https://docs.ropensci.org/lingtypology/reference/vanuatu.feature.md)
+  : Download Vanuatu Voices data
+- [`wals`](https://docs.ropensci.org/lingtypology/reference/wals.md) :
+  WALS's Language identifiers
+- [`wals.feature()`](https://docs.ropensci.org/lingtypology/reference/wals.feature.md)
+  : Download WALS data
+
+# Articles
+
+### All vignettes
+
+- [\`lingtypology\`: creating
+  maps](https://docs.ropensci.org/lingtypology/articles/lingtypology_creating_maps.md):
+- [\`lingtypology\`: Download typological databases'
+  data](https://docs.ropensci.org/lingtypology/articles/lingtypology_db_API.md):
+- [\`lingtypology\` and other
+  packages](https://docs.ropensci.org/lingtypology/articles/lingtypology_dplyr.md):
+- [\`lingtypology\`: Glottolog
+  functions](https://docs.ropensci.org/lingtypology/articles/lingtypology_glottolog_functions.md):
+- [\`lingtypology\`: introduction and
+  installation](https://docs.ropensci.org/lingtypology/articles/lingtypology_intro.md):
