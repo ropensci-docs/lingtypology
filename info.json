@@ -1,0 +1,13 @@
+{
+  "commit": {
+    "commit": "a4aa7e68519fe52cc6449c0608c98cc3622a6b7a",
+    "author": "George Moroz <agricolamz@gmail.com>",
+    "time": "2026-11-11T20:01:12Z",
+    "files": 1,
+    "merge": false,
+    "message": "update codemeta\n"
+  },
+  "repo": "https://github.com/ropensci/lingtypology",
+  "pkg": "lingtypology",
+  "time": "2026-11-11T22:12:49Z"
+}
